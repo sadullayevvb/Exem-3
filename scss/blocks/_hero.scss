@@ -1,0 +1,183 @@
+.hero {
+  width: 100%;
+
+  background-image: url(../../image/Bitmap.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1440px;
+
+  @mixin button-style {
+    width: 180px;
+    height: 53px;
+    background: #fcb72b;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+  }
+
+  @mixin button-hover {
+    color: #fcb72b;
+    font-size: 15px;
+    font-weight: 700;
+    border: 3px solid #fcb72b;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    padding-top: 153px;
+    padding-bottom: 152px;
+    position: relative;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      &__title {
+        width: 500px;
+        color: #fff;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 56px;
+        letter-spacing: -2.5px;
+        margin-bottom: 40px;
+      }
+
+      &__text {
+        width: 405px;
+        color: #fff;
+        font-family: "Lexend Deca";
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        margin-bottom: 40px;
+        margin-left: 95px;
+      }
+      &__btn {
+        @include button-style();
+        
+
+        &:hover {
+          @include button-hover();
+          background-color: unset;
+        }
+      }
+    }
+  }
+  &__img-first {
+    position: absolute;
+    top: 348px;
+    left: -166px;
+  }
+  &__img-second {
+    position: absolute;
+    top: 348px;
+    left: 540px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .hero {
+    width: 768px;
+    background-image: url(../../image/tablet__bg.jpg);
+    background-size: cover;
+
+    &__wrap {
+      width: 768px;
+      padding-bottom: 217px;
+
+      &__card {
+        width: 680px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &__text {
+          padding: 0;
+          margin: 0 0 32px 0;
+        }
+        &__btn {
+          margin: 0;
+        }
+      }
+    }
+
+    &__img-first {
+      display: none;
+    }
+    &__img-second {
+      left: -80px;
+      top: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .hero {
+    width: 375px;
+    background-image: url(../../image/mobile__bg.png);
+    background-size: cover;
+
+    &__wrap {
+      width: 375px;
+      padding-bottom: 217px;
+
+      &__card {
+        width: 311px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &__title {
+          width: 311px;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: -1.786px;
+        }
+        &__text {
+          width: 311px;
+          padding: 0;
+          margin: 0 0 32px 0;
+          color: #fff;
+          text-align: center;
+          font-family: "Lexend Deca";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 25px;
+        }
+        &__btn {
+          margin: 0;
+        }
+      }
+    }
+
+    &__img-first {
+      display: none;
+    }
+    &__img-second {
+      display: none;
+    }
+  }
+}

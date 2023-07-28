@@ -1,0 +1,138 @@
+.header {
+  width: 1440px;
+  margin: 0 auto;
+  padding-top: 34px;
+  padding-bottom: 21px;
+ 
+
+  @mixin button-style {
+    background: #fcb72b;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    width: 180px;
+    height: 53px;
+  }
+
+  @mixin button-hover {
+    color: #fcb72b;
+    font-size: 15px;
+    border: 3px solid #fcb72b;
+
+  }
+
+  @mixin list-hover {
+    color: #fcb72b;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__img {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    &__logo {
+      margin-right: 16.18px;
+    }
+
+    &__item {
+      color: #939caa;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 25px;
+    }
+
+    &__link {
+      color: #939caa;
+
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 25px;
+
+      &:hover {
+        color: #fcb72b;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
+      }
+    }
+    &__btn {
+      @include button-style();
+  
+
+      &:hover {
+        @include button-hover();
+        background-color: unset;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .header {
+    width: 768px;
+    &__wrap {
+      width: 768px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 90px;
+    }
+  }
+}
+@media only screen and (max-width: 375px) {
+  .header {
+    width: 375px;
+    &__wrap {
+      width: 100%;
+
+      &__list {
+        display: flex;
+        justify-content: center;
+      }
+      &__item {
+        display: none;
+      }
+      &__link {
+        display: none;
+      }
+      &__img {
+        display: inline;
+        width: 20px;
+      }
+      &__logo {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        &-second {
+          width: 5px;
+        }
+      }
+      &__btn {
+        display: none;
+      }
+    }
+  }
+}
